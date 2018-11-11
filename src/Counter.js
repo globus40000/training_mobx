@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
-    count = 0;
+    state = {
+        count: 0
+    };
 
     render() {
         return (
             <div>
-                Counter: {this.count}<br/>
+                Counter: {this.state.count}<br/>
                 <button onClick={this.handleDec}>-</button>
                 <button onClick={this.handleInc}>+</button>
             </div>
@@ -16,12 +18,16 @@ class Counter extends Component {
 
     handleDec = () => {
         console.log('---- handleDec()');
-        this.count--;
+        this.setState({
+            count: this.state.count - 1
+        });
     }
 
     handleInc = () => {
         console.log('---- handleInc()');
-        this.count++;
+        this.setState({
+            count: this.state.count + 1
+        });
     }
 
 }
