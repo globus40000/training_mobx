@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
+import { observable } from 'mobx';
+import { observer } from 'mobx-react';
 
-class Counter extends Component {
+@observer class Counter extends Component {
 
-    state = {
-        count: 0
-    };
+    @observable count = 0;
 
     render() {
         return (
             <div>
-                Counter: {this.state.count}<br/>
+                Counter: {this.count}<br/>
                 <button onClick={this.handleDec}>-</button>
                 <button onClick={this.handleInc}>+</button>
             </div>
@@ -18,16 +18,12 @@ class Counter extends Component {
 
     handleDec = () => {
         console.log('---- handleDec()');
-        this.setState({
-            count: this.state.count - 1
-        });
+        this.count -= 1;
     }
 
     handleInc = () => {
         console.log('---- handleInc()');
-        this.setState({
-            count: this.state.count + 1
-        });
+        this.count += 1;
     }
 
 }
