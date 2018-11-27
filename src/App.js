@@ -4,6 +4,7 @@ import './App.css';
 import Counter from "./Counter";
 import { observable } from 'mobx';
 
+// "MobX, please track this value, so that you can update observers whenever needed."
 let counterState = observable({
   count: 0
 });

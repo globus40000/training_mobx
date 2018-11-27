@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
+// "This component's rendering can be derived from the relevant observables. Do so whenever needed."
 @observer class Counter extends Component {
 
     render() {
