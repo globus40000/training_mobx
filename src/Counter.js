@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
 
 // "This component's rendering can be derived from the relevant observables. Do so whenever needed."
 @observer class Counter extends Component {
@@ -8,7 +7,6 @@ import DevTools from 'mobx-react-devtools';
     render() {
         return (
             <div>
-                <DevTools/>
                 Counter: {this.props.store.count}<br/>
                 <button onClick={this.handleDec}>-</button>
                 <button onClick={this.handleInc}>+</button>
