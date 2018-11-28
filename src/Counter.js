@@ -17,12 +17,12 @@ import { observer } from 'mobx-react';
     handleDec = () => {
         console.log('---- handleDec()');
         this.props.store.decrement();
-    }
+    };
 
     handleInc = () => {
         console.log('---- handleInc()');
         this.props.store.increment();
-    }
+    };
 
 }
 
