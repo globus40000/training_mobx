@@ -1,4 +1,4 @@
-import { observable, computed } from 'mobx';
+import { observable, computed, action } from 'mobx';
 
 class Temperature {
     // Find the smallest amount of state you need, and derive all the other things
@@ -21,6 +21,19 @@ class Temperature {
             case "C": return this.temperatureCelsius + "°C";
             default: return this.temperatureCelsius + "°C";
         }
+    }
+
+    @action setUnit(newUnit) {
+        this.unit = newUnit;
+    }
+
+    @action setCelsius(degrees) {
+        this.temperatureCelsius = degrees;
+    }
+
+    @action setTemperatureAndUnit(degrees, unit) {
+        this.setCelsius(degrees);
+        this.setUnit(unit);
     }
 }
 
