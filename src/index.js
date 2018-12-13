@@ -19,7 +19,7 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        Counter: {this.props.store.count} <br/>
+        Counter: {appState.count} <br/>
         <button onClick={this.handleInc}>+</button>
         <button onClick={this.handleDec}>-</button>
       </div>
@@ -27,13 +27,13 @@ class Counter extends React.Component {
   }
 
   handleInc = () => {
-    this.props.store.increment();
+    appState.increment();
   };
 
   handleDec = () => {
-    this.props.store.decrement();
+    appState.decrement();
   };
 
 }
 
-ReactDOM.render(<Counter store={appState} />, document.getElementById('root'));
+ReactDOM.render(<Counter />, document.getElementById('root'));
